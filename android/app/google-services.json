@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1081962048572",
+    "firebase_url": "https://restapi-75cfa-default-rtdb.firebaseio.com",
+    "project_id": "restapi-75cfa",
+    "storage_bucket": "restapi-75cfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081962048572:android:a8aa6e2235a268d812a739",
+        "android_client_info": {
+          "package_name": "com.example.coba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYL3FxFUtjPAblhrgwUF3_D5BUWs3qljQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

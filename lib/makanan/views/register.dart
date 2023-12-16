@@ -1,0 +1,134 @@
+import 'package:coba/makanan/services/firebase_auth_service.dart';
+import 'package:coba/makanan/views/home.dart';
+import 'package:coba/makanan/views/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+class register extends StatefulWidget {
+  const register({super.key});
+
+  @override
+  State<register> createState() => _registerState();
+}
+
+class _registerState extends State<register> {
+  final firebase_auth_service _authService = firebase_auth_service();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  void register() async {
+    String email = _emailController.text;
+    String pw = _passwordController.text;
+    User? user =
+        await _authService.signUpWithEmailandPassword(email, pw, context);
+
+    if (user != null) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("User is successfully created"),
+        backgroundColor: Colors.green,
+      ));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => login(),
+          ));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Cannot create user'),
+        backgroundColor: Colors.red,
+      ));
+    }
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Register",
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            TextField(
+              controller: _emailController,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.email),
+                hintText: "Email Address",
+              ),
+            ),
+            const SizedBox(
+              height: 12.0,
+            ),
+            TextField(
+              controller: _passwordController,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.key),
+                hintText: "Password",
+              ),
+              obscureText: true,
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            SizedBox(
+              height: 55,
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                onPressed: () {
+                  register();
+                },
+                child: const Text(
+                  "Sign Up",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 12.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an account?",
+                ),
+                const SizedBox(
+                  width: 8.0,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const login()));
+                  },
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

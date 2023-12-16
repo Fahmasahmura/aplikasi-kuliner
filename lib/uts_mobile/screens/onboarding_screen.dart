@@ -13,7 +13,7 @@ class _onboarding_screenState extends State<onboarding_screen> {
     return Scaffold(
       body: SafeArea(
         child: PageView.builder(
-          itemCount: 3,
+          itemCount: 10,
           itemBuilder: (context, index) {
             return Center(
               child: Container(
@@ -21,9 +21,10 @@ class _onboarding_screenState extends State<onboarding_screen> {
                 height: MediaQuery.of(context).size.height * 0.85,
                 decoration: BoxDecoration(
                   color: Colors.black,
-                  gradient: LinearGradient(colors: [Colors.black, Colors.grey],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+                  gradient: LinearGradient(
+                    colors: [Colors.black, Colors.grey],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                   ),
                   borderRadius: BorderRadius.circular(35),
                 ),

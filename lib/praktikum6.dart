@@ -20,11 +20,13 @@ class _praktikum6State extends State<praktikum6> {
   void getData() async {
     try {
       var response = await Dio()
-          .get("https://protocoderspoint.com/jsondata/superheros.json");
+          // .get("https://protocoderspoint.com/jsondata/superheros.json");
+          .get(
+              "https://restapi-75cfa-default-rtdb.firebaseio.com/makanan.json?auth=n66tulAT0iQen6typPShhH0gJH8c7p38f1nVHpuK");
 
       if (response.statusCode == 200) {
         setState(() {
-          jsonList = response.data["superheros"] as List;
+          jsonList = response.data["data"] as List;
         });
       }
       print(response);
@@ -38,13 +40,21 @@ class _praktikum6State extends State<praktikum6> {
     return Scaffold(
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
-          String URL = jsonList[index]['url'];
+          String URL = jsonList[index]['imageAsset'];
 
           return Card(
             child: ListTile(
               title: Text(jsonList[index]['name']),
-              subtitle: Text(jsonList[index]['power']),
-              leading: Image.network(URL),
+              subtitle: Text(jsonList[index]['description']),
+              leading: SizedBox(
+                height: 200,
+                child: Image.network(
+                  URL,
+                  width: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              // leading: Image.network(URL),
             ),
           );
         },

@@ -30,7 +30,8 @@ var makananList = [
   ),
   makanan(
     name: 'Bakso Kota Cak Man',
-    location: 'Mojolangu, Kec. Lowokwaru, Kota Malang',
+    location:
+        'Jalan WR. Supratman C1 Kav. 13 - 14, Rampal Celaket, Kec. Klojen, Kota Malang',
     description:
         'Bakso adalah hidangan yang sangat populer di Indonesia dan dapat ditemukan di seluruh negeri, dari warung kecil hingga restoran besar. Bakso terdiri dari bola-bola daging yang biasanya terbuat dari daging sapi, tetapi juga bisa terbuat dari daging ayam, ikan, atau udang, yang dicampur dengan tepung tapioka, bumbu, dan rempah-rempah. Bola daging ini kemudian direbus dalam kaldu daging yang gurih hingga matang. Ukuran dan tekstur bakso dapat bervariasi, mulai dari bakso kecil seukuran marmer hingga yang lebih besar seukuran bola tenis.',
     imageAsset: 'assets/images/3.jpeg',
@@ -76,7 +77,7 @@ var makananList = [
     name: 'Pos Ketan Legenda 1967',
     location: 'Jl. Soekarno Hatta, Jatimulyo, Kec. Lowokwaru, Kota Malang',
     description:
-        'gKetan adalah hidangan tradisional yang populer di berbagai negara Asia Tenggara, terutama di Indonesia. Hidangan ini terbuat dari beras ketan atau glutinous rice yang memiliki tekstur lengket dan kenyal. Ketan biasanya dimasak dan diolah dengan berbagai metode, menghasilkan berbagai variasi hidangan yang berbeda.',
+        'Ketan adalah hidangan tradisional yang populer di berbagai negara Asia Tenggara, terutama di Indonesia. Hidangan ini terbuat dari beras ketan atau glutinous rice yang memiliki tekstur lengket dan kenyal. Ketan biasanya dimasak dan diolah dengan berbagai metode, menghasilkan berbagai variasi hidangan yang berbeda.',
     imageAsset: 'assets/images/9.jpeg',
   ),
   makanan(
